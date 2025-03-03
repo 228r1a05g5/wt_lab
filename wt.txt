@@ -1,0 +1,106 @@
+Write an HTML page including javascript that takes a given set of integer numbers and shows
+    them after sorting in descending order.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Numbers</title>
+</head>
+<body>
+    <input id="numbers" placeholder="Enter numbers">
+    <button onclick="sortNumbers()">Sort</button>
+    <p id="result"></p>
+
+    <script>
+        function sortNumbers() {
+            let numbersArray = document.getElementById("numbers").value.split(",").map(Number).sort((a, b) => b - a);
+            document.getElementById("result").innerText = numbersArray;
+        }
+    </script>
+</body>
+</html>
+
+Write an HTML page including any required JavaScript that takes a number from one text field in the range of 0 to 999 and shows it in another text field in words. if the number is out of range, it should show “out of range” and if it is not a number, it should show “not a number” message in the result box.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number to Words</title>
+</head>
+<body>
+    <input id="num" type="text" placeholder="Enter number (0-999)">
+    <button onclick="convert()">Convert</button>
+    <input id="11">
+    
+
+    <script>
+        function convert() {
+            let num = parseInt(document.getElementById("num").value);
+            let words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            
+            if (isNaN(num)) document.getElementById("words").value = "Not a number";
+            else if (num < 0 || num > 999) document.getElementById("words").value = "Out of range";
+            else document.getElementById("11").value=( num.toString().split('').map(n => words[n]).join(' '));
+        }
+    </script>
+</body>
+</html>
+Write an HTML page that has one input, which can take multi line text and a submit button. Once the user clicks the submit button, it should show the number of characters, words and lines in the text entered using an alert message. Words are separated with white space and lines are separated with new line character.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Analyzer</title>
+</head>
+<body>
+    <form>
+        <center>    <textarea   style="align-items: center;" id="textInput" placeholder="Enter text here..." rows="5" cols="50"></textarea>
+    <br>
+    <button onclick="analyzeText()">Submit</button>
+</center>
+
+</div>
+    <script>
+        function analyzeText() {
+            let text = document.getElementById("textInput").value;
+            let charCount = text.length;
+            let wordCount =  text.split(/\s+/).length;
+            let lineCount = text.split(/\n/).length;
+            
+            alert("Characters: " + charCount + "\nWords: " + wordCount + "\nLines: " + lineCount);
+        }
+    </script>
+</body>
+</html>
+Write an HTML page that contains a selection box with a list of 5 countries. When the user selects a country, its capital should be printed next to the list. Add CSS to customize the properties of the font of the capital (color, bold and font size).
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capitals of Countries</title>
+</head>
+<body>
+    <label>Select a Country:</label>
+    <select id="countrySelect" onchange="showCapital()">
+        <option value="">--Select--</option>
+        <option value="New Delhi">India</option>
+        <option value="Wellington">New Zealand</option>
+        <option value="Paris">France</option>
+        <option value="Athens">Greece</option>
+        <option value="Madrid">Spain</option>
+        <option value="Beijing">China</option>
+        <option value="Islamabad">Pakistan</option>
+        <option value="Tokyo">Japan</option>
+    </select>
+    <h1 id="capital"></h1>
+
+    <script>
+        function showCapital() {
+            document.getElementById("capital").innerText = document.getElementById("countrySelect").value;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
